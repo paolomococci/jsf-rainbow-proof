@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" media="all" href="/webjars/font-awesome/5.6.1/css/all.css"/>
+        <title>home</title>
+    </h:head>
+    <h:body>
+        <h:panelGrid columns="1" cellpadding="10">
+            <h:outputText value="home - use panelMenu tag" 
+                          style="font-family: sans-serif; font-size: xx-large"/>
+        </h:panelGrid>
+        <p:separator/>
+        <p:fieldset legend="index" style="width: 400px">
+            <h:form>
+                <p:growl showSummary="true" showDetail="true" sticky="true">
+                    <p:autoUpdate/>
+                </p:growl>
+                <p:panelMenu style="width: 250px">
+                    <p:submenu label="Action proof">
+                        <p:menuitem value="create" icon="fa fa-fw fa-save" 
+                                    action="#{homeBean.create()}" ajax="true"/>
+                        <p:menuitem value="read" icon="fa fa-fw fa-share" 
+                                    action="#{homeBean.read()}" ajax="true"/>
+                        <p:menuitem value="update" icon="fa fa-fw fa-recycle" 
+                                    action="#{homeBean.update()}" ajax="true"/>
+                        <p:menuitem value="delete" icon="fa fa-fw fa-eraser" 
+                                    action="#{homeBean.delete()}" ajax="false"/>
+                    </p:submenu>
+                    <p:submenu label="Panel proof">
+                        <p:menuitem value="accordion" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="grid" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="tab-view" icon="fa fa-fw fa-list-ul" url="#"/>
+                    </p:submenu>
+                    <p:submenu label="Data proof">
+                        <p:menuitem value="list" icon="fa fa-fw fa-list" url="#"/>
+                        <p:menuitem value="table" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="table-add-row" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="table-color" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="table-group" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="table-filter" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="table-right-align" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="table-sort" icon="fa fa-fw fa-list-ul" url="#"/>
+                    </p:submenu>
+                    <p:submenu label="Charts proof">
+                        <p:menuitem value="bar" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="line" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="radar" icon="fa fa-fw fa-list-ul" url="#"/>
+                    </p:submenu>
+                    <p:submenu label="Timeline proof">
+                        <p:menuitem value="planning" icon="fa fa-fw fa-list-ul" url="#"/>
+                    </p:submenu>
+                </p:panelMenu>
+            </h:form>
+        </p:fieldset>
+    </h:body>
+</html>
