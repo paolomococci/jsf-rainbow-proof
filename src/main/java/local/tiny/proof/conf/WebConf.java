@@ -37,6 +37,7 @@ public class WebConf
         registry.addViewController("/").setViewName("forward:/home.xhtml");
         registry.addViewController("/home").setViewName("forward:/home.xhtml");
         registry.addViewController("/fruit").setViewName("forward:/fruit.xhtml");
+        registry.addViewController("/egg").setViewName("forward:/egg.xhtml");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
         WebMvcConfigurer.super.addViewControllers(registry);
     }
