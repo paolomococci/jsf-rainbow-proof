@@ -10,7 +10,7 @@
     </h:head>
     <h:body>
         <h:panelGrid columns="1" cellpadding="10">
-            <h:outputText value="home - use panelMenu tag" 
+            <h:outputText value="home page - use panelMenu tag" 
                           style="font-family: sans-serif; font-size: xx-large"/>
         </h:panelGrid>
         <p:separator/>
@@ -31,27 +31,28 @@
                                     action="#{homeBean.delete()}" ajax="false"/>
                     </p:submenu>
                     <p:submenu label="Panel proof">
-                        <p:menuitem value="fruits" icon="fa fa-fw fa-chevron-right" url="/fruit"/>
-                        <p:menuitem value="grid" icon="fa fa-fw fa-list-ul" url="#"/>
-                        <p:menuitem value="tab-view" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="fruits" icon="fa fa-fw fa-link" url="/fruit"/>
+                        <p:menuitem value="tab-view" icon="fa fa-fw fa-unlink" url="#"/>
+                        <p:menuitem value="wizard" icon="fa fa-fw fa-unlink" url="#"/>
                     </p:submenu>
                     <p:submenu label="Data proof">
-                        <p:menuitem value="list" icon="fa fa-fw fa-list" url="#"/>
-                        <p:menuitem value="table" icon="fa fa-fw fa-list-ul" url="#"/>
-                        <p:menuitem value="table-add-row" icon="fa fa-fw fa-list-ul" url="#"/>
-                        <p:menuitem value="table-color" icon="fa fa-fw fa-list-ul" url="#"/>
-                        <p:menuitem value="table-group" icon="fa fa-fw fa-list-ul" url="#"/>
-                        <p:menuitem value="table-filter" icon="fa fa-fw fa-list-ul" url="#"/>
-                        <p:menuitem value="table-right-align" icon="fa fa-fw fa-list-ul" url="#"/>
-                        <p:menuitem value="table-sort" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="list" icon="fa fa-fw fa-unlink" url="#"/>
+                        <p:menuitem value="eggs" icon="fa fa-fw fa-link" url="/egg"/>
+                        <p:menuitem value="table" icon="fa fa-fw fa-unlink" url="#"/>
+                        <p:menuitem value="table-add-row" icon="fa fa-fw fa-unlink" url="#"/>
+                        <p:menuitem value="table-color" icon="fa fa-fw fa-unlink" url="#"/>
+                        <p:menuitem value="table-group" icon="fa fa-fw fa-unlink" url="#"/>
+                        <p:menuitem value="table-filter" icon="fa fa-fw fa-unlink" url="#"/>
+                        <p:menuitem value="table-right-align" icon="fa fa-fw fa-unlink" url="#"/>
+                        <p:menuitem value="table-sort" icon="fa fa-fw fa-unlink" url="#"/>
                     </p:submenu>
                     <p:submenu label="Charts proof">
-                        <p:menuitem value="bar" icon="fa fa-fw fa-list-ul" url="#"/>
-                        <p:menuitem value="line" icon="fa fa-fw fa-list-ul" url="#"/>
-                        <p:menuitem value="radar" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="bar" icon="fa fa-fw fa-unlink" url="#"/>
+                        <p:menuitem value="line" icon="fa fa-fw fa-unlink" url="#"/>
+                        <p:menuitem value="radar" icon="fa fa-fw fa-unlink" url="#"/>
                     </p:submenu>
                     <p:submenu label="Timeline proof">
-                        <p:menuitem value="planning" icon="fa fa-fw fa-list-ul" url="#"/>
+                        <p:menuitem value="planning" icon="fa fa-fw fa-unlink" url="#"/>
                     </p:submenu>
                 </p:panelMenu>
             </h:form>
