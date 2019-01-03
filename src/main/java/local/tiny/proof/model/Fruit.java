@@ -19,6 +19,7 @@
 package local.tiny.proof.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import lombok.Data;
 
 /**
