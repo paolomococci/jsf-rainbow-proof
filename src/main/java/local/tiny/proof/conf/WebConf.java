@@ -40,6 +40,7 @@ public class WebConf
         registry.addViewController("/data-list").setViewName("forward:/data-list.xhtml");
         registry.addViewController("/bar-chart").setViewName("forward:/bar-chart.xhtml");
         registry.addViewController("/line-chart").setViewName("forward:/line-chart.xhtml");
+        registry.addViewController("/candlestick-chart").setViewName("forward:/candlestick-chart.xhtml");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
         WebMvcConfigurer.super.addViewControllers(registry);
     }
