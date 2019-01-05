@@ -18,7 +18,9 @@
 
 package local.tiny.proof.bean;
 
+import java.io.Serializable;
 import java.security.SecureRandom;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -32,7 +34,9 @@ import org.primefaces.model.chart.OhlcChartSeries;
  */
 
 @Named
-public class CandlestickChartBean {
+@ViewScoped
+public class CandlestickChartBean 
+        implements Serializable {
     
     @Getter(AccessLevel.PUBLIC)
     private OhlcChartModel candlestickChartModel;
