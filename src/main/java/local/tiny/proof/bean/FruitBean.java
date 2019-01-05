@@ -18,8 +18,10 @@
 
 package local.tiny.proof.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import local.tiny.proof.model.Fruit;
 import lombok.AccessLevel;
@@ -31,7 +33,9 @@ import lombok.Getter;
  */
 
 @Named
-public class FruitBean {
+@ViewScoped
+public class FruitBean 
+        implements Serializable {
     
     @Getter(AccessLevel.PUBLIC)
     private final List<Fruit> fruits;
