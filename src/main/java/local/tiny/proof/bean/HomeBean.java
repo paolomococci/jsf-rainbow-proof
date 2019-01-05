@@ -18,8 +18,10 @@
 
 package local.tiny.proof.bean;
 
+import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 /**
@@ -28,7 +30,9 @@ import javax.inject.Named;
  */
 
 @Named
-public class HomeBean {
+@ViewScoped
+public class HomeBean 
+        implements Serializable {
     
     public void create() {
         infoMessage("Ok, right now I should create a new record in the database.", 
