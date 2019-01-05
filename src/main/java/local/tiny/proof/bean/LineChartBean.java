@@ -18,7 +18,9 @@
 
 package local.tiny.proof.bean;
 
+import java.io.Serializable;
 import java.security.SecureRandom;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -33,7 +35,9 @@ import org.primefaces.model.chart.LineChartSeries;
  */
 
 @Named
-public class LineChartBean {
+@ViewScoped
+public class LineChartBean 
+        implements Serializable {
     
     @Getter(AccessLevel.PUBLIC)
     private LineChartModel lineChartModel;
