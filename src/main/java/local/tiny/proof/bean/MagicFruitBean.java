@@ -23,6 +23,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import local.tiny.proof.model.Fruit;
 import lombok.AccessLevel;
@@ -34,6 +35,7 @@ import lombok.Getter;
  */
 
 @Named
+@ViewScoped
 public class MagicFruitBean 
         implements Serializable {
     
