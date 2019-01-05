@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+        template="../../templates/ui.xhtml">
+    <ui:define name="head"></ui:define>
+    <ui:define name="content">
+        <h:panelGrid columns="1" cellpadding="10">
+            <h:outputText value="planning chart" 
+                          style="font-family: sans-serif; font-size: xx-large"/>
+        </h:panelGrid>
+        <p:separator/>
+        <h:form id="planning">
+            <p:growl id="message" showDetail="true" showSummary="true">
+                <p:autoUpdate/>
+            </p:growl>
+            <p:timeline id="workorders" 
+                        value="#{planningBean.planning}" 
+                        height="250px" 
+                        selectable="#{planningBean.selectable}" 
+                        zoomable="#{planningBean.zoomable}" 
+                        moveable="#{planningBean.moveable}" 
+                        stackEvents="#{planningBean.stackEvents}" 
+                        axisOnTop="#{planningBean.axisOnTop}" 
+                        eventStyle="#{planningBean.eventStyle}" 
+                        showCurrentTime="#{planningBean.showCurrentTime}" 
+                        showNavigation="#{planningBean.showNavigation}">
+                <p:ajax event="select" 
+                        listener="#{planningBean.onSelect}" 
+                        process=":planning"/>
+            </p:timeline>
+        </h:form>
+    </ui:define>
+</ui:composition>
