@@ -108,7 +108,7 @@ public class MagicFruitBean
     }
     
     private int randomizeId() {
-        return (int) (Math.random() * 10);
+        return (int) (Math.random() * 100000);
     }
     
     private String randomizeName() {
