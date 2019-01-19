@@ -41,6 +41,7 @@ public class WebConf
         registry.addViewController("/table").setViewName("forward:/table.xhtml");
         registry.addViewController("/table-with-highlighted-lines").setViewName("forward:/table-with-highlighted-lines.xhtml");
         registry.addViewController("/table-with-right-align-values").setViewName("forward:/table-with-right-align-values.xhtml");
+        registry.addViewController("/table-toggle").setViewName("forward:/table-toggle.xhtml");
         registry.addViewController("/table-with-sortable-values").setViewName("forward:/table-with-sortable-values.xhtml");
         registry.addViewController("/bar-chart").setViewName("forward:/bar-chart.xhtml");
         registry.addViewController("/line-chart").setViewName("forward:/line-chart.xhtml");
