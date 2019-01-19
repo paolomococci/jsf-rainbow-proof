@@ -1,0 +1,41 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="../../templates/ui.xhtml">
+    <ui:define name="head"></ui:define>
+    <ui:define name="content">
+        <h:panelGrid columns="1" cellpadding="10">
+            <h:outputText value="table with right align values" 
+                          style="font-family: sans-serif; font-size: xx-large"/>
+        </h:panelGrid>
+        <p:separator/>
+        <h:form>
+            <p:dataTable 
+                value="#{magicFruitBean.fruits}" 
+                var="fruit" 
+                dir="rtl">
+                <f:facet name="header">
+                    magic fruits - listed by randomized values: 
+                    id, name, color, taste and price in fantasy money per kilo
+                </f:facet>
+                <p:column headerText="price">
+                    <h:outputText value="#{fruit.price}"/>
+                </p:column>
+                <p:column headerText="taste">
+                    <h:outputText value="#{fruit.taste}"/>
+                </p:column>
+                <p:column headerText="color">
+                    <h:outputText value="#{fruit.color}"/>
+                </p:column>
+                <p:column headerText="name">
+                    <h:outputText value="#{fruit.name}"/>
+                </p:column>
+                <p:column headerText="id">
+                    <h:outputText value="#{fruit.id}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </ui:define>
+</ui:composition>
