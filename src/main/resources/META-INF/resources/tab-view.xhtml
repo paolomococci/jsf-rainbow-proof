@@ -1,0 +1,64 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+        template="../../templates/ui.xhtml">
+    <ui:define name="head"></ui:define>
+    <ui:define name="content">
+        <h:panelGrid columns="1" cellpadding="10">
+            <h:outputText value="tab view" 
+                          style="font-family: sans-serif; font-size: xx-large"/>
+        </h:panelGrid>
+        <p:separator/>
+        <h:form id="verticalTab">
+            <p:tabView orientation="left">
+                <p:tab title="cherry">
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <p:graphicImage name="images/fruits/cherry.png"/>
+                        <h:outputText 
+                            value="The Cherry tree it belongs of the genus Prunus. 
+                            The name derive from the Latin cerasum referring to an ancient Greek region named Kerasous."
+                        />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab title="grapes">
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <p:graphicImage name="images/fruits/grapes.png"/>
+                        <h:outputText 
+                            value="Grape botanically is a berry. 
+                            The cultivation of grape began 6,000–8,000 years ago in the Near East."
+                        />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab title="lemon">
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <p:graphicImage name="images/fruits/lemon.png"/>
+                        <h:outputText 
+                            value="Lemon, Citrus Limon, is a species of tiny evergreen tree of Rutaceae family, native to South Asia."
+                        />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab title="melon">
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <p:graphicImage name="images/fruits/melon.png"/>
+                        <h:outputText 
+                            value="Melon is any of various plants of the family Cucurbitaceae with edible fruit. 
+                            This plant originated in Northeastern Africa."
+                        />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab title="strawberry">
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <p:graphicImage name="images/fruits/strawberry.png"/>
+                        <h:outputText 
+                            value="Strawberry is a widely species of the Fragaria genus. 
+                            This herb was first mentioned in ancient Roman literature for only medicinal use. 
+                            The first garden fruit was grown in Brittany during the late XVIII century."
+                        />
+                    </h:panelGrid>
+                </p:tab>
+            </p:tabView>
+        </h:form>
+    </ui:define>
+</ui:composition>
