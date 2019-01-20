@@ -38,6 +38,7 @@ public class WebConf
         registry.addViewController("/home").setViewName("forward:/home.xhtml");
         registry.addViewController("/accordion-panel").setViewName("forward:/accordion-panel.xhtml");
         registry.addViewController("/data-list").setViewName("forward:/data-list.xhtml");
+        registry.addViewController("/tab-view").setViewName("forward:/tab-view.xhtml");
         registry.addViewController("/table").setViewName("forward:/table.xhtml");
         registry.addViewController("/table-with-highlighted-lines").setViewName("forward:/table-with-highlighted-lines.xhtml");
         registry.addViewController("/table-with-filterable-values").setViewName("forward:/table-with-filterable-values.xhtml");
