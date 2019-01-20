@@ -1,0 +1,73 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="../../templates/ui.xhtml">
+    <ui:define name="head"></ui:define>
+    <ui:define name="content">
+        <h:panelGrid columns="1" cellpadding="10">
+            <h:outputText value="table with filterable values" 
+                          style="font-family: sans-serif; font-size: xx-large"/>
+        </h:panelGrid>
+        <p:separator/>
+        <h:form id="filtering">
+            <p:dataTable 
+                id="dataTable" 
+                value="#{dataTableFilterView.fruits}" 
+                var="fruit" 
+                widgetVar="fruitsTable" 
+                emptyMessage="no fruits found with given criteria" 
+                filteredValue="#{dataTableFilterView.filteredFruits}">
+                <f:facet name="header">
+                    <p:outputPanel>
+                        <h:outputText value="filtering all fields: "/>
+                        <p:inputText 
+                            id="globalFilter" 
+                            onkeyup="PF('fruitsTable').filter()" 
+                            style="width: 200px" 
+                            placeholder="enter criteria keyword"/>
+                    </p:outputPanel>
+                </f:facet>
+                <p:column 
+                    id="idColumn" 
+                    filterBy="#{fruit.id}" 
+                    headerText="id" 
+                    footerText="id" 
+                    filterMatchMode="contains">
+                    <h:outputText value="#{fruit.id}"/>
+                </p:column>
+                <p:column 
+                    id="nameColumn" 
+                    filterBy="#{fruit.name}"
+                    headerText="name" 
+                    footerText="name" 
+                    filterMatchMode="contains">
+                    <h:outputText value="#{fruit.name}"/>
+                </p:column>
+                <p:column 
+                    id="colorColumn" 
+                    filterBy="#{fruit.color}" 
+                    headerText="color" 
+                    footerText="color" 
+                    filterMatchMode="contains">
+                    <h:outputText value="#{fruit.color}"/>
+                </p:column>
+                <p:column 
+                    id="tasteColumn" 
+                    filterBy="#{fruit.taste}" 
+                    headerText="taste" 
+                    footerText="taste" 
+                    filterMatchMode="contains">
+                    <h:outputText value="#{fruit.taste}"/>
+                </p:column>
+                <p:column 
+                    id="priceColumn" 
+                    headerText="price" 
+                    footerText="price">
+                    <h:outputText value="#{fruit.price}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </ui:define>
+</ui:composition>
