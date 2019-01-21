@@ -31,7 +31,7 @@ import lombok.Data;
 @Named
 @ViewScoped
 @Data
-public class ContactInputMaskBean 
+public class ContactBean 
         implements Serializable {
     
     private String name;
