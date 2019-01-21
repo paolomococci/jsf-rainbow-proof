@@ -33,7 +33,7 @@
                 <p:inputText 
                     id="name" 
                     required="true"
-                    value="#{contactInputMaskBean.name}"
+                    value="#{contactBean.name}"
                     maxlength="15"
                     class="field">
                     <p:keyFilter regEx="/[a-zA-Z]/i"/>
@@ -42,7 +42,7 @@
                 <p:inputText 
                     id="surname" 
                     required="true"
-                    value="#{contactInputMaskBean.surname}" 
+                    value="#{contactBean.surname}" 
                     maxlength="15"
                     class="field">
                     <p:keyFilter regEx="/[a-zA-Z]/i"/>
@@ -51,7 +51,7 @@
                 <p:inputMask 
                     id="taxId" 
                     required="true"
-                    value="#{contactInputMaskBean.taxId}" 
+                    value="#{contactBean.taxId}" 
                     mask="9999999999" 
                     maxlength="10"
                     class="field">
@@ -61,7 +61,7 @@
                 <p:inputText 
                     id="email" 
                     required="true"
-                    value="#{contactInputMaskBean.email}"
+                    value="#{contactBean.email}"
                     maxlength="40"
                     class="field">
                     <p:watermark 
@@ -74,7 +74,7 @@
                 <p:inputMask 
                     id="phone" 
                     required="true"
-                    value="#{contactInputMaskBean.phone}" 
+                    value="#{contactBean.phone}" 
                     mask="999-9999999" 
                     maxlength="11"
                     class="field">
@@ -97,19 +97,19 @@
                 <p:panelGrid id="display" columns="2" columnClasses="label, value">
                     <h:outputText value="name: "/>
                     <h:outputText 
-                        value="#{contactInputMaskBean.name}"/>
+                        value="#{contactBean.name}"/>
                     <h:outputText value="surname: "/>
                     <h:outputText 
-                        value="#{contactInputMaskBean.surname}"/>
+                        value="#{contactBean.surname}"/>
                     <h:outputText value="tax id: "/>
                     <h:outputText 
-                        value="#{contactInputMaskBean.taxId}"/>
+                        value="#{contactBean.taxId}"/>
                     <h:outputText value="email: "/>
                     <h:outputText 
-                        value="#{contactInputMaskBean.email}"/>
+                        value="#{contactBean.email}"/>
                     <h:outputText value="phone: "/>
                     <h:outputText 
-                        value="#{contactInputMaskBean.phone}"/>
+                        value="#{contactBean.phone}"/>
                 </p:panelGrid>
             </p:dialog>
         </h:form>
