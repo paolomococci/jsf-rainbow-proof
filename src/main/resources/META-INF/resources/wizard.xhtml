@@ -1,0 +1,177 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="../../templates/ui.xhtml">
+    <ui:define name="head">
+        <style type="text/css">
+            .label {
+                width: 30%;
+                padding: 4px;
+            }
+            .value {
+                width: 70%;
+                padding: 4px;
+            }
+            .errorOfFields {
+                color: #f00;
+            }
+            .confirmLabel {
+                font-weight: bold;
+            }
+            .confirmGrid {
+                width: 33%;
+                padding: 4px;
+            }
+        </style>
+    </ui:define>
+    <ui:define name="content">
+        <h:panelGrid columns="1" cellpadding="10">
+            <h:outputText value="wizard" 
+                          style="font-family: sans-serif; font-size: xx-large"/>
+        </h:panelGrid>
+        <p:separator/>
+        <h:form id="customWizard">
+            <p:growl id="messages" showDetail="true"/>
+            <p:wizard 
+                id="customerData"
+                flowListener="#{customerWizardBean.onFlowProcess}">
+                <p:tab id="personal" title="personal">
+                    <p:panel header="personal details">
+                        <p:messages/>
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <h:outputText value="firstname: * "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.firstname}" 
+                                required="true" 
+                                label="firstname"/>
+                            <h:outputText value="lastname: * "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.lastname}" 
+                                required="true" 
+                                label="lastname"/>
+                            <h:outputText value="birthday: * "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.birthday}" 
+                                required="true" 
+                                label="birthday"/>
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+                <p:tab id="address" title="address">
+                    <p:panel header="address details">
+                        <p:messages/>
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <h:outputText value="state: "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.state}" 
+                                required="false" 
+                                label="state"/>
+                            <h:outputText value="city: "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.city}" 
+                                required="false" 
+                                label="city"/>
+                            <h:outputText value="street: "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.street}" 
+                                required="false" 
+                                label="street"/>
+                            <h:outputText value="civic: "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.civic}" 
+                                required="false" 
+                                label="civic"/>
+                            <h:outputText value="zip: "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.zip}" 
+                                required="false" 
+                                label="zip"/>
+                            <h:outputText value="leap"/>
+                            <h:selectBooleanCheckbox value="#{customerWizardBean.leap}"/>
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+                <p:tab id="contact" title="contact">
+                    <p:panel header="contact details">
+                        <p:messages/>
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <h:outputText value="email: "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.email}" 
+                                required="false" 
+                                label="email"/>
+                            <h:outputText value="phone: "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.phone}" 
+                                required="false" 
+                                label="phone"/>
+                            <h:outputText value="info: "/>
+                            <p:inputText 
+                                value="#{customerWizardBean.customer.info}" 
+                                required="false" 
+                                label="info"/>
+                            <h:outputText value="leap"/>
+                            <h:selectBooleanCheckbox value="#{customerWizardBean.leap}"/>
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+                <p:tab id="confirm" title="confirm">
+                    <p:panel header="confirm data">
+                        <h:panelGrid 
+                            id="confirmation" 
+                            columns="3" 
+                            columnClasses="grid, grid, grid">
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputText value="firstname "/>
+                                <h:outputText value="#{customerWizardBean.customer.firstname}" 
+                                              styleClass="confirmLabel"/>
+                                <h:outputText value="lastname "/>
+                                <h:outputText value="#{customerWizardBean.customer.lastname}" 
+                                              styleClass="confirmLabel"/>
+                                <h:outputText value="birthday "/>
+                                <h:outputText value="#{customerWizardBean.customer.birthday}" 
+                                              styleClass="confirmLabel"/>
+                            </h:panelGrid>
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputText value="state "/>
+                                <h:outputText value="#{customerWizardBean.customer.state}" 
+                                              styleClass="confirmLabel"/>
+                                <h:outputText value="city "/>
+                                <h:outputText value="#{customerWizardBean.customer.city}" 
+                                              styleClass="confirmLabel"/>
+                                <h:outputText value="street "/>
+                                <h:outputText value="#{customerWizardBean.customer.street}" 
+                                              styleClass="confirmLabel"/>
+                                <h:outputText value="civic "/>
+                                <h:outputText value="#{customerWizardBean.customer.civic}" 
+                                              styleClass="confirmLabel"/>
+                                <h:outputText value="zip "/>
+                                <h:outputText value="#{customerWizardBean.customer.zip}" 
+                                              styleClass="confirmLabel"/>
+                            </h:panelGrid>
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputText value="email "/>
+                                <h:outputText value="#{customerWizardBean.customer.email}" 
+                                              styleClass="confirmLabel"/>
+                                <h:outputText value="phone "/>
+                                <h:outputText value="#{customerWizardBean.customer.phone}" 
+                                              styleClass="confirmLabel"/>
+                                <h:outputText value="info "/>
+                                <h:outputText value="#{customerWizardBean.customer.info}" 
+                                              styleClass="confirmLabel"/>
+                            </h:panelGrid>
+                        </h:panelGrid>
+                        <p:commandButton 
+                            value="commit" 
+                            icon="fa fa-fw fa-plus-square"
+                            action="#{customerWizardBean.commit}" 
+                            update="messages" 
+                            process="@this"/>
+                    </p:panel>
+                </p:tab>
+            </p:wizard>
+        </h:form>
+    </ui:define>
+</ui:composition>
