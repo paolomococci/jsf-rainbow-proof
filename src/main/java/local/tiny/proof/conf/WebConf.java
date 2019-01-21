@@ -37,6 +37,7 @@ public class WebConf
         registry.addViewController("/").setViewName("forward:/home.xhtml");
         registry.addViewController("/home").setViewName("forward:/home.xhtml");
         registry.addViewController("/input-mask").setViewName("forward:/input-mask.xhtml");
+        registry.addViewController("/input-inplace").setViewName("forward:/input-inplace.xhtml");
         registry.addViewController("/accordion-panel").setViewName("forward:/accordion-panel.xhtml");
         registry.addViewController("/tab-view").setViewName("forward:/tab-view.xhtml");
         registry.addViewController("/wizard").setViewName("forward:/wizard.xhtml");
