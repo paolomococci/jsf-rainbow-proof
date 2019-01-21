@@ -1,0 +1,92 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="../../templates/ui.xhtml">
+    <ui:define name="head"></ui:define>
+    <ui:define name="content">
+        <h:panelGrid columns="1" cellpadding="10">
+            <h:outputText value="input inplace" 
+                          style="font-family: sans-serif; font-size: xx-large"/>
+        </h:panelGrid>
+        <p:separator/>
+        <h:form prependId="false">
+            <p:growl id="messages"/>
+            <p:panel header="inplace">
+                <h:panelGrid columns="2" cellpadding="10">
+                    <h:outputLabel for="name" value="name: * "/>
+                    <p:inplace id="name" label="name">
+                        <p:inputText 
+                            required="true" 
+                            value="#{contactBean.name}">
+                            <p:keyFilter regEx="/[a-zA-Z]/i"/>
+                        </p:inputText>
+                    </p:inplace>
+                    <h:outputLabel for="surname" value="surname: * "/>
+                    <p:inplace id="surname" label="surname">
+                        <p:inputText 
+                            required="true" 
+                            value="#{contactBean.surname}">
+                            <p:keyFilter regEx="/[a-zA-Z]/i"/>
+                        </p:inputText>
+                    </p:inplace>
+                    <h:outputLabel for="taxId" value="tax id: * "/>
+                    <p:inplace id="taxId" label="tax id">
+                        <p:inputText 
+                            required="true" 
+                            value="#{contactBean.taxId}">
+                            <p:keyFilter regEx="/[\d]/"/>
+                        </p:inputText>
+                    </p:inplace>
+                    <h:outputLabel for="email" value="email: * "/>
+                    <p:inplace id="email" label="email">
+                        <p:inputText 
+                            required="true" 
+                            value="#{contactBean.email}">
+                            <p:keyFilter regEx="/[a-z0-9_\.\-@]/i"/>
+                        </p:inputText>
+                    </p:inplace>
+                    <h:outputLabel for="phone" value="phone: * "/>
+                    <p:inplace id="phone" label="phone">
+                        <p:inputText 
+                            required="true" 
+                            value="#{contactBean.phone}">
+                            <p:keyFilter regEx="/[\d\-]/"/>
+                        </p:inputText>
+                    </p:inplace>
+                    <p:commandButton 
+                        value="clear" type="reset"/>
+                    <p:commandButton 
+                        value="commit" 
+                        update="display" 
+                        oncomplete="PF('dialogWidget').show()"/>
+                </h:panelGrid>
+            </p:panel>
+            <p:dialog 
+                id="dialogWidget" 
+                widgetVar="dialogWidget" 
+                modal="true" 
+                resizable="false" 
+                header="costomer data" 
+                showEffect="fade">
+                <p:panelGrid id="display" columns="2" columnClasses="label, value">
+                    <h:outputText value="name: "/>
+                    <h:outputText 
+                        value="#{contactBean.name}"/>
+                    <h:outputText value="surname: "/>
+                    <h:outputText 
+                        value="#{contactBean.surname}"/>
+                    <h:outputText value="tax id: "/>
+                    <h:outputText 
+                        value="#{contactBean.taxId}"/>
+                    <h:outputText value="email: "/>
+                    <h:outputText 
+                        value="#{contactBean.email}"/>
+                    <h:outputText value="phone: "/>
+                    <h:outputText 
+                        value="#{contactBean.phone}"/>
+                </p:panelGrid>
+            </p:dialog>
+        </h:form>
+    </ui:define>
+</ui:composition>
