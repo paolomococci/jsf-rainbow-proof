@@ -21,7 +21,6 @@ package local.tiny.proof.bean;
 import java.io.Serializable;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import local.tiny.proof.model.Customer;
 import lombok.Data;
 
 /**
@@ -32,13 +31,12 @@ import lombok.Data;
 @Named
 @ViewScoped
 @Data
-public class CustomerInputMaskBean 
+public class ContactInputMaskBean 
         implements Serializable {
     
-    private Customer customer;
-
-    public CustomerInputMaskBean() {
-        super();
-        this.customer = new Customer();
-    }
+    private String name;
+    private String surname;
+    private String taxId;
+    private String email;
+    private String phone;
 }
